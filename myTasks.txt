@@ -1,4 +1,1 @@
-1. I have towork on navigation
-2. I have to work on task bar
-3. I have to work on content
-4. I have to work on Form
+https://bharatarora12345.github.io/FullStackPracticals/
