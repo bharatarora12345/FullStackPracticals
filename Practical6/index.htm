@@ -6,40 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical-6</title>
-    <style>
-        body {
-            background-color: rgb(207, 207, 207);
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        h1 {
-            color: white;
-        }
-        
-        .card {
-            width: 20%;
-            margin: 20px 20px;
-            /* background-color: white; */
-            border-radius: 10px;
-            box-shadow: 0 5px 5px rgb(0, 0, 0 / 15%);
-        }
-        /* .card p {
-            margin: 10px;
-            text-align: justify;
-        } */
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1>PRACTICAL-6: CREATE FOLLOWING LAYOUT USING CSS LAYOUT PROPERTIES.</h1>
-    <div>
-        <div class="card">
-            <img src="./Images/html.jpg">
-            <h4>Introduction to HTML</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque cupiditate debitis aliquam fugit autem commodi quibusdam quia est omnis. Id rem voluptates ipsam! Omnis distinctio modi nam architecto aliquam blanditiis?</p>
-            <a href="./htmlinfo.htm"></a>
+    <div id="container">
+        <div class="box" id="box1">
+            <div class="image-heading">
+                <img src="./Images/html.jpg">
+            </div>
+            <h3>Introduction to HTML</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, sequi placeat! Officiis, eveniet! Quaerat, officia sunt expedita provident error dolorum officiis laudantium ipsum sequi ducimus quae quidem!</p>
+            <div class="image" style="text-align: center;">
+                <a href="./htmlinfo.htm" class="mybutton">Read More</a>
+            </div>
         </div>
+
+        <div class="box" id="box2">
+            <div class="image-heading">
+                <img src="./Images/css.jpg">
+            </div>
+            <h3>Introduction to CSS</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, sequi placeat! Officiis, eveniet! Quaerat, officia sunt expedita provident error dolorum officiis laudantium ipsum sequi ducimus quae quidem!</p>
+            <div class="image" style="text-align: center;">
+                <a href="./cssinfo.htm" class="mybutton">Read More</a>
+            </div>
+        </div>
+
+        <div class="box" id="box3">
+            <div class="image-heading">
+                <img src="./Images/javascript.png">
+            </div>
+            <h3>Introduction to JavaScript</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, sequi placeat! Officiis, eveniet! Quaerat, officia sunt expedita provident error dolorum officiis laudantium ipsum sequi ducimus quae quidem!</p>
+            <div class="image" style="text-align: center;">
+                <a href="./jsinfo.htm" class="mybutton">Read More</a>
+            </div>
+        </div>
+
+        <div class="box" id="box4">
+            <div class="image-heading">
+                <img src="./Images/bootstrap.jpg">
+            </div>
+            <h3>Introduction to Bootstrap</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, sequi placeat! Officiis, eveniet! Quaerat, officia sunt expedita provident error dolorum officiis laudantium ipsum sequi ducimus quae quidem!</p>
+            <div class="image" style="text-align: center;">
+                <a href="./bootstrapinfo.htm" class="mybutton">Read More</a>
+            </div>
+        </div>
+
     </div>
 
 </body>
