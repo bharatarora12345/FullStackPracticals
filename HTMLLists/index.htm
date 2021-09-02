@@ -8,13 +8,19 @@
     <title>HTML List</title>
 
     <style>
+        /* ul to ol  */
+        
         ul {
-            list-style-type: none;
+            list-style-type: circle;
             /* padding-left: 0px; */
         }
-        
-        li::before {
+        /* ul li::before {
             content: '♥';
+            color: red;
+        } */
+        
+        dt {
+            font-size: 40px;
             color: red;
         }
     </style>
@@ -22,13 +28,41 @@
 
 <body>
     <!-- unordered list -->
-    <ul type="square">
+    <ul type="square" class="ul">
         <li>HTML</li>
         <li>CSS</li>
         <li>JavaScript</li>
         <li>React</li>
         <li>Angular</li>
     </ul>
+
+
+    <!-- /* ordered list *> -->
+    <ol type="i" start="5">
+        <li>HTML
+            <ul>
+                <li>HTML1</li>
+                <li>HTML2</li>
+                <li>HTML3</li>
+                <li>HTML4</li>
+                <li>HTML5</li>
+            </ul>
+        </li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Angular</li>
+    </ol>
+
+
+    <!-- // definition list // Description  -->
+    <dl>
+        <dt>FullStack</dt>
+        <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam praesentium, voluptates nihil dolores quae tempora in sequi nesciunt architecto perferendis neque, repudiandae pariatur similique nostrum ipsa ipsam veritatis qui distinctio, vitae
+            voluptatibus doloribus commodi unde! Odit quaerat quae odio consequuntur facilis sint dolorem eum, doloribus corporis excepturi tempore? Corrupti reprehenderit ea voluptate, consequatur magni pariatur totam consectetur voluptatem, voluptas
+            optio accusantium culpa provident nulla unde commodi cumque hic ex ipsum. Nesciunt praesentium magni sint, eveniet facere iste laudantium corrupti voluptas maiores dolores voluptatem fugiat nihil commodi totam beatae delectus architecto tenetur
+            blanditiis vero harum cupiditate dolore officiis eum. Explicabo, maxime!</dd>
+    </dl>
 </body>
 
 </html>
