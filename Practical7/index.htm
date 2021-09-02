@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-7</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            font-size: 40px;
+            margin: 0;
+            padding: 25px 0;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        
+        #container {
+            width: 100%;
+            height: 100%;
+            margin: 0px auto;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+        }
+        
+        #header {
+            height: 100px;
+            background-color: gray;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #banner {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(168, 206, 221);
+            height: 680px;
+            margin-bottom: 15px;
+        }
+        
+        #section-1,
+        #section-2,
+        #section-3 {
+            margin-top: 15px;
+        }
+        
+        #section-1::after,
+        #section-2::after,
+        #section-3::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        #section-1 h1,
+        #section-2 h1,
+        #section-3 h1 {
+            color: black;
+        }
+        
+        .circle {
+            border-radius: 50%;
+            height: 250px;
+            width: 250px;
+            background-color: orange;
+            align-items: center;
+            color: white;
+            float: left;
+            margin-right: 5px;
+            margin-left: 50px;
+        }
+        
+        #maincontent {
+            width: 48%;
+            height: 600px;
+            float: left;
+            background-color: grey;
+            text-align: center;
+            margin-right: 10px;
+            padding: 60px;
+        }
+        
+        .articals {
+            float: right;
+        }
+        
+        .artical {
+            float: right;
+            background-color: chocolate;
+            height: 193px;
+            width: 48%;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            padding: 90px;
+        }
+        
+        #footer {
+            height: 100px;
+            background-color: plum;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .square {
+            float: left;
+            width: 20%;
+            margin: 10px 10px 20px 20px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Header</h1>
+        </div>
+        <div id="banner">
+            <h1>Banner</h1>
+        </div>
+        <div id="section-1">
+            <h1>Section-1</h1>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div id="section-2">
+            <h1>Section-2</h1>
+            <div id="maincontent">MainContent</div>
+            <div id="articals">
+                <div class="artical">Article-1</div>
+                <div class="artical">Article-2</div>
+                <div class="artical">Article-3</div>
+            </div>
+        </div>
+        <div id="section-3">
+            <h1>Section-3</h1>
+            <div id="squares">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <h1>Footer</h1>
+        </div>
+    </div>
+</body>
+
+</html>
