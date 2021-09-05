@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-8</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+        
+        h1 {
+            font-size: 40px;
+            margin: 0;
+            padding: 25px 0;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        
+        #container {
+            scroll-behavior: smooth;
+            width: 100%;
+            height: 100%;
+            margin: auto auto;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+        }
+        
+        #header {
+            height: 68px;
+            background-color: gray;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .header::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        #banner {
+            display: flex;
+            /* justify-content: center; */
+            /* background-color: rgb(168, 206, 221); */
+            background-color: blueviolet;
+            height: 680px;
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        #section-1,
+        #section-2,
+        #section-3 {
+            margin-top: 15px;
+        }
+        
+        #section-1::after,
+        #section-2::after,
+        #section-3::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        #section-1 h1,
+        #section-2 h1,
+        #section-3 h1 {
+            color: black;
+        }
+        
+        .circle {
+            border-radius: 50%;
+            height: 250px;
+            width: 250px;
+            background-color: orange;
+            align-items: center;
+            color: white;
+            float: left;
+            margin-right: 5px;
+            margin-left: 30px;
+            display: flex;
+        }
+        
+        #maincontent {
+            width: 48%;
+            height: 550px;
+            float: left;
+            background-color: grey;
+            /* text-align: center; */
+            margin-right: 5px;
+        }
+        
+        .articals {
+            float: right;
+        }
+        
+        .artical {
+            float: right;
+            background-color: chocolate;
+            height: 170px;
+            width: 48%;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            /* padding: 90px; */
+        }
+        
+        #footer {
+            height: 100px;
+            background-color: plum;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .square {
+            float: left;
+            width: 20%;
+            margin: 10px 10px 20px 20px;
+            height: 300px;
+            background-color: red;
+        }
+        /* // navigation bar */
+        
+        .navBar {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        
+        .navBar ul {
+            list-style: none;
+            display: inline-flex;
+        }
+        
+        .navBar a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: auto;
+            margin-right: 10px;
+            padding: 10px 40px;
+        }
+        
+        .navBar a:hover {
+            background-color: white;
+            color: black;
+        }
+        /* Banner */
+        
+        #banner {
+            background-image: url("https://imgur.com/qIxEnMl.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #banner h1 {
+            margin: 20px 20px;
+            color: #fff;
+        }
+        /* section -1 */
+        
+        .circle img {
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+        }
+        /* main content */
+        
+        #maincontent h6 {
+            margin-left: 5px;
+            margin-top: 10px;
+        }
+        
+        #maincontent p {
+            font-size: 20px;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-right: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
+        }
+        /* articles */
+        
+        #articals h2 {
+            font-size: 30px;
+            color: black;
+        }
+        
+        #project1 {
+            background-image: url(https://imgur.com/JyMz0CR.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        #project2 {
+            background-image: url(https://imgur.com/GFLWoXM.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        #project3 {
+            background-image: url(https://imgur.com/uzmZqZA.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* Technologies Used*/
+        
+        #grid-container {
+            width: 100%;
+            margin: 15px auto;
+        }
+        
+        #grid-container::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        .grid {
+            width: 20%;
+            float: left;
+            margin-left: 50px;
+            background-color: lightgrey;
+            border-radius: 8px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+        }
+        
+        .grid>img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .grid>h4 {
+            margin: 0px 10px;
+            text-align: center;
+        }
+        
+        .grid>p {
+            margin: 10px;
+            font-size: 15px;
+            text-align: justify;
+            line-height: 25px;
+            color: white;
+        }
+        
+        .grid>a {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
+            background-color: red;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            color: black;
+            font-size: 40px;
+            text-align: center;
+            padding: 25px 0px;
+        }
+        
+        .grid>a:hover {
+            background-color: blue;
+        }
+        /* footer */
+        
+        #footer p {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 25px;
+        }
+        /* #footer a {
+            margin-top: 60px;
+            text-align: center;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="navBar">
+                <ul>
+                    <li><a href="#container">Home</a></li>
+                    <li><a href="#banner">About</a></li>
+                    <li><a href="#section-2">Team</a></li>
+                    <li><a href="#section-3">Technologies</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="banner">
+            <h1>Practical-8</h1>
+        </div>
+        <div id="section-1">
+            <h1>Team Members</h1>
+            <div class="circle">
+                <img src="https://imgur.com/aFFF1uw.jpg" alt="" />
+            </div>
+            <div class="circle">
+                <img src="https://imgur.com/dIAsZGb.png" alt="" />
+            </div>
+            <div class="circle">
+                <img src="https://imgur.com/GIikFy7.png" alt="" />
+            </div>
+            <div class="circle">
+                <img src="https://imgur.com/JvDB5AN.png" alt="" />
+            </div>
+        </div>
+        <div id="section-2">
+            <h1>About Us</h1>
+            <div id="maincontent">
+                <h6>About Projects</h6>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur quam voluptatem deleniti, commodi nostrum sed ex rerum quibusdam distinctio at aliquam, fugit sequi aliquid accusamus aperiam quos ducimus fuga unde temporibus numquam et
+                    vitae qui nobis cumque. Quaerat omnis quos debitis mollitia, modi voluptatibus hic autem possimus? Beatae in sunt voluptate labore nemo eius molestiae aut reprehenderit minus cum! Porro reiciendis debitis laudantium voluptatibus placeat
+                    et velit facere animi quos distinctio minus mollitia eligendi iste non architecto ducimus odit officiis, maxime saepe recusandae! Esse earum omnis corporis nemo beatae qui repellat, ducimus facere nihil quaerat quo quae debitis repudiandae,
+                    harum numquam aperiam voluptate obcaecati tenetur eaque expedita pariatur ratione nulla quasi eligendi? Autem unde eos suscipit optio perferendis eligendi doloremque, cupiditate laboriosam? Sequi, repellendus reprehenderit ipsum odio
+                    illum incidunt dolore quisquam ea et optio! Officiis voluptatum cumque architecto, ex quas nobis alias porro provident dolor. Deleniti, vel a? Quam soluta nemo, voluptate officiis asperiores tempore sit impedit excepturi quasi fuga
+                    nobis reprehenderit quis. Quidem, mollitia? Ratione, corporis fugit perspiciatis nobis consequatur quam, reprehenderit delectus cum officia placeat vel quisquam pariatur obcaecati totam aspernatur maxime quaerat aut maiores ullam qui?
+                    Tempore id, corporis a dolor distinctio ipsam at doloremque quaerat dignissimos.</p>
+            </div>
+            <div id="articals">
+                <div class="artical" id="project1">
+                    <h2>Project-1</h2>
+                </div>
+                <div class="artical" id="project2">
+                    <h2>Project-2</h2>
+                </div>
+                <div class="artical" id="project3">
+                    <h2>Project-3</h2>
+                </div>
+            </div>
+        </div>
+        <div id="grid-container">
+            <a name="Technologies"></a>
+            <h1>Technologies Used</h1>
+            <div class="grid">
+                <img src="https://imgur.com/joZlsqC.png" alt="" />
+                <h4>Introduction to HTML</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, illum odio! Aperiam esse quia blanditiis quasi? Cum itaque recusandae consequuntur!
+                </p>
+
+                <a href="htmlinfo.htm">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="https://imgur.com/8F89zk5.png" alt="" />
+                <h4>Introduction to CSS</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, illum odio! Aperiam esse quia blanditiis quasi? Cum itaque recusandae consequuntur!
+                </p>
+
+                <a href="cssinfo.htm">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="https://imgur.com/YWiaReD.png" alt="" />
+                <h4>Introduction to JavaScript</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, illum odio! Aperiam esse quia blanditiis quasi? Cum itaque recusandae consequuntur!
+                </p>
+
+                <a href="jsinfo.htm">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="https://imgur.com/L0JabFG.jpg" alt="" />
+                <h4>Introduction to Bootstrap</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, illum odio! Aperiam esse quia blanditiis quasi? Cum itaque recusandae consequuntur!
+                </p>
+
+                <a href="bootstrapinfo.htm">Read More</a>
+            </div>
+        </div>
+        <!-- <div id="section-3">
+            <h1>Technologies Used</h1>
+            <div id="squares">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+        </div> -->
+    </div>
+    <div id="footer">
+        <p>Website Template to Practical-8
+            <br>
+            <a href="#header">Back to top</a>
+        </p>
+
+    </div>
+    </div>
+</body>
+
+</html>
