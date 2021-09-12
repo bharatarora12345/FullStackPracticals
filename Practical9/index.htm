@@ -5,6 +5,647 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Practical-9</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+        
+        h1 {
+            font-size: 40px;
+            margin: 0;
+            padding: 25px 0;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        
+        #container {
+            scroll-behavior: smooth;
+            width: 100%;
+            height: 100%;
+            margin: auto auto;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+        }
+        
+        #header {
+            width: 100%;
+            height: 68px;
+            background-color: gray;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .header::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        #banner {
+            /* justify-content: center; */
+            /* background-color: rgb(168, 206, 221); */
+            background-color: blueviolet;
+            height: 680px;
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        #section-1,
+        #section-2,
+        #section-3 {
+            margin-top: 15px;
+        }
+        
+        #section-1::after,
+        #section-2::after,
+        #section-3::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        #section-1 h1,
+        #section-2 h1,
+        #section-3 h1 {
+            color: black;
+        }
+        
+        #section-1 {
+            width: 100%;
+        }
+        
+        .circle {
+            border-radius: 50%;
+            height: 250px;
+            width: 250px;
+            background-color: orange;
+            align-items: center;
+            color: white;
+            float: left;
+            margin-right: 20px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        #maincontent {
+            width: 48%;
+            height: 550px;
+            float: left;
+            background-color: grey;
+            /* text-align: center; */
+            margin-right: 5px;
+        }
+        
+        .articals {
+            float: right;
+        }
+        
+        .artical {
+            float: right;
+            background-color: chocolate;
+            height: 170px;
+            width: 48%;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            /* padding: 90px; */
+        }
+        
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: plum;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .square {
+            float: left;
+            width: 20%;
+            margin: 10px 10px 20px 20px;
+            height: 300px;
+            background-color: red;
+        }
+        /* // navigation bar */
+        
+        .navBar {
+            height: 68px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            position: fixed;
+            background-color: grey;
+            width: 100%;
+            top: 0;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .navBar ul {
+            list-style: none;
+            display: inline-flex;
+        }
+        
+        .navBar a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: auto;
+            margin-right: 10px;
+            padding: 10px 40px;
+        }
+        
+        .navBar a:hover {
+            background-color: white;
+            color: black;
+        }
+        /* Banner */
+        
+        #banner {
+            background-image: url("https://imgur.com/qIxEnMl.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #banner h1 {
+            margin: 20px 20px;
+            color: #fff;
+        }
+        /* section -1 */
+        
+        .circle img {
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+            /* margin-bottom: 20px; */
+        }
+        /* main content */
+        
+        #maincontent h6 {
+            margin-left: 5px;
+            margin-top: 10px;
+        }
+        
+        #maincontent p {
+            font-size: 20px;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-right: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
+        }
+        /* articles */
+        
+        #articals h2 {
+            font-size: 30px;
+            color: black;
+        }
+        
+        #project1 {
+            background-image: url(https://imgur.com/JyMz0CR.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        #project2 {
+            background-image: url(https://imgur.com/GFLWoXM.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        #project3 {
+            background-image: url(https://imgur.com/uzmZqZA.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* Technologies Used*/
+        
+        #grid-container {
+            width: 100%;
+            margin: 15px auto;
+        }
+        
+        #grid-container::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        .grid {
+            width: 20%;
+            float: left;
+            margin-left: 50px;
+            background-color: lightgrey;
+            border-radius: 8px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+        }
+        
+        .grid>img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .grid>h4 {
+            margin: 0px 10px;
+            text-align: center;
+        }
+        
+        .grid>p {
+            margin: 10px;
+            font-size: 15px;
+            text-align: justify;
+            line-height: 25px;
+            color: white;
+        }
+        
+        .grid>a {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
+            background-color: red;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            color: black;
+            font-size: 40px;
+            text-align: center;
+            padding: 25px 0px;
+        }
+        
+        .grid>a:hover {
+            background-color: blue;
+        }
+        /* footer */
+        
+        #footer p {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 25px;
+        }
+        /* // responsive :horizontal navigation  */
+        
+        .show-btn,
+        .hide-btn {
+            display: none;
+        }
+        
+        .show-btn {
+            float: right;
+            margin: auto;
+            margin-right: 30px;
+        }
+        
+        #chk {
+            position: absolute;
+            visibility: hidden;
+            z-index: -10;
+        }
+        
+        .show-btn:hover,
+        .hide-btn:hover {
+            color: black;
+            transition: .4s;
+        }
+        /* //media query */
+        
+        @media(max-width:1299) {
+            #header {
+                width: 100%;
+                position: fixed;
+            }
+            #banner {
+                display: flex;
+                font-size: 35px;
+                height: 640px;
+            }
+            #section-1 {
+                margin-left: 20%;
+            }
+            .circle img {
+                height: 250px;
+                width: 250px;
+                border-radius: 50%;
+                background-color: goldenrod;
+                float: left;
+                margin-left: 15%;
+                margin-bottom: 20px;
+            }
+            #grid-container {
+                width: 100%;
+                margin: 15px auto;
+            }
+            .grid {
+                width: 46%;
+                float: left;
+                margin-left: 100px;
+                background-color: lightgrey;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+            }
+            .grid img {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .grid h4 {
+                margin: 0px 10px;
+                text-align: center;
+                color: #333;
+                font-size: 20px;
+            }
+        }
+        
+        @media(max-width: 1000px) {
+            .show-btn,
+            .hide-btn {
+                display: block;
+            }
+            .menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: #333;
+                text-align: center;
+                padding: 80px 0;
+                transition: .7s;
+                line-height: normal;
+            }
+            #chk:checked~.menu {
+                right: 0;
+            }
+            .menu li {
+                display: block;
+                padding: 20px 0;
+            }
+            .navBar ul {
+                display: block;
+            }
+            .hide-btn {
+                text-align: right;
+                margin-right: 20px;
+                margin-top: -50px;
+            }
+            .header {
+                width: 100%;
+            }
+            #banner {
+                width: 100%;
+                height: 350px;
+                display: flex;
+                margin-bottom: 15px;
+            }
+            #banner h1 {
+                margin: 10px 20px;
+                font-size: 25px;
+            }
+            #section-1 {
+                margin-left: 10px;
+            }
+            #grid-container {
+                width: 100%;
+                margin: 15px auto;
+            }
+            .grid {
+                width: 40%;
+                float: left;
+                margin-left: 50px;
+                background-color: lightgrey;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+            }
+            .grid img {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .grid h4 {
+                margin: 0px 10px;
+                text-align: center;
+                color: #333;
+                font-size: 20px;
+            }
+            /* // break point */
+            @media (max-width: 625px) {
+                #container {
+                    width: 100%;
+                }
+                .show-btn,
+                .hide-btn {
+                    display: block;
+                }
+                .menu {
+                    position: fixed;
+                    top: 0;
+                    right: -100%;
+                    width: 100%;
+                    height: 100vh;
+                    background-color: #333;
+                    text-align: center;
+                    padding: 80px 0;
+                    transition: .7s;
+                    line-height: normal;
+                }
+                #chk:checked~.menu {
+                    right: 0;
+                }
+                .menu li {
+                    display: block;
+                    padding: 20px 0;
+                }
+                .navBar ul {
+                    display: block;
+                }
+                .hide-btn {
+                    text-align: right;
+                    margin-right: 20px;
+                    margin-top: -50px;
+                }
+                #banner {
+                    width: 100%;
+                    height: 250px;
+                }
+                #section-1 {
+                    width: 90%;
+                    margin-left: 10%;
+                }
+                #section-1 h1 {
+                    font-size: 30px;
+                    margin-left: -15%;
+                }
+                #maincontent {
+                    width: 100%;
+                    height: 200px;
+                    margin-bottom: 20px;
+                }
+                #articals {
+                    width: 100%;
+                    display: flex;
+                }
+                .artical {
+                    display: block;
+                }
+                #grid-container {
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+                .grid {
+                    margin-left: 20px;
+                    width: 90%;
+                    max-height: 500px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="navBar">
+                <input type="checkbox" id="chk">
+                <label for="chk" class="show-btn">
+                    <i class="fa fa-bars" ></i>
+                </label>
+                <ul class="menu">
+                    <label for="chk" class="hide-btn">
+                        <i class="fa fa-times"></i>
+                    </label>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#banner">About</a></li>
+                    <li><a href="#section-1">Team</a></li>
+                    <li><a href="#grid-container">Technologies</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="banner">
+            <h1>Practical-8</h1>
+        </div>
+        <div id="section-1">
+            <h1>Team Members</h1>
+            <div class="circle">
+                <img src="https://imgur.com/aFFF1uw.jpg" alt="" />
+            </div>
+            <div class="circle">
+                <img src="https://imgur.com/dIAsZGb.png" alt="" />
+            </div>
+            <div class="circle">
+                <img src="https://imgur.com/GIikFy7.png" alt="" />
+            </div>
+            <div class="circle">
+                <img src="https://imgur.com/JvDB5AN.png" alt="" />
+            </div>
+        </div>
+        <div id="section-2">
+            <h1>About Us</h1>
+            <div id="maincontent">
+                <h6>About Projects</h6>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur quam voluptatem deleniti, commodi nostrum sed ex rerum quibusdam distinctio at aliquam, fugit sequi aliquid accusamus aperiam quos ducimus fuga unde temporibus numquam et
+                    vitae qui nobis cumque. Quaerat omnis quos debitis mollitia, modi voluptatibus hic autem possimus? Beatae in sunt voluptate labore nemo eius molestiae aut reprehenderit minus cum! Porro reiciendis debitis laudantium voluptatibus placeat
+                    et velit facere animi quos distinctio minus mollitia eligendi iste non architecto ducimus odit officiis, maxime saepe recusandae! Esse earum omnis corporis nemo beatae qui repellat, ducimus facere nihil quaerat quo quae debitis repudiandae,
+                    harum numquam aperiam voluptate obcaecati tenetur eaque expedita pariatur ratione nulla quasi eligendi? Autem unde eos suscipit optio perferendis eligendi doloremque, cupiditate laboriosam? Sequi, repellendus reprehenderit ipsum odio
+                    illum incidunt dolore quisquam ea et optio! Officiis voluptatum cumque architecto, ex quas nobis alias porro provident dolor. Deleniti, vel a? Quam soluta nemo, voluptate officiis asperiores tempore sit impedit excepturi quasi fuga
+                    nobis reprehenderit quis. Quidem, mollitia? Ratione, corporis fugit perspiciatis nobis consequatur quam, reprehenderit delectus cum officia placeat vel quisquam pariatur obcaecati totam aspernatur maxime quaerat aut maiores ullam qui?
+                    Tempore id, corporis a dolor distinctio ipsam at doloremque quaerat dignissimos.</p>
+            </div>
+            <div id="articals">
+                <div class="artical" id="project1">
+                    <h2>Project-1</h2>
+                </div>
+                <div class="artical" id="project2">
+                    <h2>Project-2</h2>
+                </div>
+                <div class="artical" id="project3">
+                    <h2>Project-3</h2>
+                </div>
+            </div>
+        </div>
+        <div id="grid-container">
+            <a name="Technologies"></a>
+            <h1>Technologies Used</h1>
+            <div class="grid">
+                <img src="https://imgur.com/joZlsqC.png" alt="" />
+                <h4>Introduction to HTML</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, illum odio! Aperiam esse quia blanditiis quasi? Cum itaque recusandae consequuntur!
+                </p>
+
+                <a href="htmlinfo.htm">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="https://imgur.com/8F89zk5.png" alt="" />
+                <h4>Introduction to CSS</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, illum odio! Aperiam esse quia blanditiis quasi? Cum itaque recusandae consequuntur!
+                </p>
+
+                <a href="cssinfo.htm">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="https://imgur.com/YWiaReD.png" alt="" />
+                <h4>Introduction to JavaScript</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, illum odio! Aperiam esse quia blanditiis quasi? Cum itaque recusandae consequuntur!
+                </p>
+
+                <a href="jsinfo.htm">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="https://imgur.com/L0JabFG.jpg" alt="" />
+                <h4>Introduction to Bootstrap</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, illum odio! Aperiam esse quia blanditiis quasi? Cum itaque recusandae consequuntur!
+                </p>
+
+                <a href="bootstrapinfo.htm">Read More</a>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer">
+        <p>Website Template to Practical-8
+            <br>
+            <a href="#header">Back to top</a>
+        </p>
+
+    </div>
+    </div>
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical-9</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css ">
     <style>
@@ -161,6 +802,8 @@
         .navBar ul {
             list-style: none;
             display: inline-flex;
+            /* display: flex; */
+            /* display: inherit; */
         }
         
         .navBar a {
@@ -172,6 +815,7 @@
             margin: auto auto;
             /* margin-right: 10px; */
             padding: 10px 40px;
+            transition: 0.4s;
         }
         
         .navBar a:hover {
@@ -307,8 +951,15 @@
         }
         /* // responsive :horizontal navigation  */
         
+        .show-btn,
+        .hide-btn {
+            display: none;
+        }
+        
         .show-btn {
             float: right;
+            margin: auto;
+            margin-right: 30px;
         }
         
         #chk {
@@ -317,7 +968,49 @@
             z-index: -10;
         }
         
-        .show-btn:hover {}
+        .show-btn:hover,
+        .hide-btn:hover {
+            /* background-color: white; */
+            color: black;
+            transition: .4s;
+        }
+        /* //media query */
+        
+        @media(max-width: 800px) {
+            .show-btn,
+            .hide-btn {
+                display: block;
+            }
+            .menu {
+                position: fixed;
+                top: 0;
+                /* work as a slider */
+                right: -100%;
+                width: 100%;
+                height: 80vh;
+                background-color: #333;
+                text-align: center;
+                padding: 80px 0;
+                transition: .7s;
+                line-height: normal;
+            }
+            #chk:checked~.menu {
+                right: 0;
+            }
+            .menu li {
+                display: block;
+                padding: 20px 0;
+            }
+            .navBar ul {
+                /* align-items: flex-end; */
+                display: block;
+            }
+            .hide-btn {
+                text-align: right;
+                margin-right: 15px;
+                margin-top: -30px;
+            }
+        }
     </style>
 </head>
 
@@ -326,18 +1019,18 @@
         <div id="header">
             <div class="navBar">
                 <input type="checkbox" id="chk">
-                <ul>
+                <label for="chk" class="show-btn">
+                    <i class="fa fa-bars" ></i>
+                </label>
+                <ul class="menu">
+                    <label for="chk" class="hide-btn">
+                        <i class="fa fa-times"></i>
+                    </label>
                     <li><a href="#header">Home</a></li>
                     <li><a href="#banner">About</a></li>
                     <li><a href="#section-1">Team</a></li>
                     <li><a href="#grid-container">Technologies</a></li>
                     <li><a href="#footer">Contact</a></li>
-                    <label for="chk" class="show-btn">
-                        <i class="fa fa-times"></i>
-                    </label>
-                    <label for="chk" class="show-btn">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </label>
                 </ul>
             </div>
         </div>
@@ -435,4 +1128,4 @@
     </div>
 </body>
 
-</html>
+</html> -->
