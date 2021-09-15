@@ -30,6 +30,8 @@
 .content {
     width: 100%;
     padding: 20px;
+    float: right;
+    transition: .7s;
 }
 
 .content img {
@@ -44,12 +46,14 @@
 }
 
 .sidebar {
-    width: 15%;
+    width: 20%;
     height: 100%;
     float: left;
     position: fixed;
     top: 70px;
     background-color: #353b48;
+    left: -100%;
+    transition: .7s;
 }
 
 .sidebar ul {
@@ -92,4 +96,47 @@ i {
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     border-top: 2px solid rgba(255, 255, 255, 0.1);
     padding: 15px 25px;
+}
+
+.show-btn,
+.hide-btn {
+    font-size: 35px;
+    color: white;
+    position: fixed;
+    top: 20px;
+    left: 50px;
+}
+
+.hide-btn {
+    opacity: 0;
+}
+
+#chk {
+    opacity: 0;
+}
+
+#chk:checked~.sidebar {
+    left: 0;
+}
+
+#chk:checked~.show-btn {
+    opacity: 0;
+}
+
+#chk:checked~.hide-btn {
+    opacity: 1;
+}
+
+#chk:checked~.content {
+    width: 80%;
+}
+
+@media(max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+    .header h1 {
+        display: none;
+    }
 }
